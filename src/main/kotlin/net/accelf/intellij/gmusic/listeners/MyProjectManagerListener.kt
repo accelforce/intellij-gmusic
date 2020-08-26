@@ -1,8 +1,8 @@
-package com.github.kyori19.intellijgmusic.listeners
+package net.accelf.intellij.gmusic.listeners
 
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.ProjectManagerListener
-import com.github.kyori19.intellijgmusic.services.MyProjectService
+import net.accelf.intellij.gmusic.services.MyProjectService
 
 internal class MyProjectManagerListener : ProjectManagerListener {
 

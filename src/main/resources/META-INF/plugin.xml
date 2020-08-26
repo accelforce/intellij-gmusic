@@ -1,19 +1,19 @@
 <idea-plugin>
-    <id>com.github.kyori19.intellijgmusic</id>
-    <name>intellij-gmusic</name>
-    <vendor>kyori19</vendor>
+    <id>net.accelf.intellij.gmusic</id>
+    <name>GMusic</name>
+    <vendor>kyori19 and Team AccelForce</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.kyori19.intellijgmusic.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.kyori19.intellijgmusic.services.MyProjectService"/>
+        <applicationService serviceImplementation="net.accelf.intellij.gmusic.services.MyApplicationService"/>
+        <projectService serviceImplementation="net.accelf.intellij.gmusic.services.MyProjectService"/>
     </extensions>
 
     <projectListeners>
-        <listener class="com.github.kyori19.intellijgmusic.listeners.MyProjectManagerListener"
+        <listener class="net.accelf.intellij.gmusic.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </projectListeners>
 </idea-plugin>

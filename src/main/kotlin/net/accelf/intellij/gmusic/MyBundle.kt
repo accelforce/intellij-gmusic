@@ -1,4 +1,4 @@
-package com.github.kyori19.intellijgmusic
+package net.accelf.intellij.gmusic
 
 import com.intellij.AbstractBundle
 import org.jetbrains.annotations.NonNls

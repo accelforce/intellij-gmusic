@@ -1,6 +1,6 @@
-package com.github.kyori19.intellijgmusic.services
+package net.accelf.intellij.gmusic.services
 
-import com.github.kyori19.intellijgmusic.MyBundle
+import net.accelf.intellij.gmusic.MyBundle
 
 class MyApplicationService {
 
