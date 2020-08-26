@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.kyori19.intellijgmusic.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.kyori19.intellijgmusic.MyBundle
 
 class MyApplicationService {
 
