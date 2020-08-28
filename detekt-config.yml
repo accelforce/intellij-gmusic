@@ -1,6 +1,14 @@
 # Default detekt configuration:
 # https://github.com/detekt/detekt/blob/master/detekt-core/src/main/resources/default-detekt-config.yml
 
+complexity:
+  LongMethod:
+    threshold: 120
+
 formatting:
-  Indentation:
-    active: true
+  MaximumLineLength:
+    active: false
+
+style:
+  ReturnCount:
+    excludeGuardClauses: true
