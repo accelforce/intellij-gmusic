@@ -39,6 +39,14 @@ repositories {
 }
 dependencies {
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.11.0")
+
+    implementation("com.squareup.okhttp3:logging-interceptor:4.7.2")
+
+    val scarletVersion by extra("0.1.10")
+    implementation("com.tinder.scarlet:message-adapter-gson:$scarletVersion")
+    implementation("com.tinder.scarlet:scarlet:$scarletVersion")
+    implementation("com.tinder.scarlet:stream-adapter-rxjava2:$scarletVersion")
+    implementation("com.tinder.scarlet:websocket-okhttp:$scarletVersion")
 }
 
 // Configure gradle-intellij-plugin plugin.

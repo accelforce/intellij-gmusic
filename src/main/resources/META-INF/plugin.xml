@@ -8,12 +8,27 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="net.accelf.intellij.gmusic.services.MyApplicationService"/>
-        <projectService serviceImplementation="net.accelf.intellij.gmusic.services.MyProjectService"/>
+        <applicationService serviceImplementation="net.accelf.intellij.gmusic.services.AppService"/>
+
+        <statusBarWidgetFactory implementation="net.accelf.intellij.gmusic.statusbar.MusicWidgetFactory"
+                                id="net.accelf.intellij.gmusic.statusbar.MusicWidgetFactory"
+                                order="first"/>
     </extensions>
 
-    <projectListeners>
-        <listener class="net.accelf.intellij.gmusic.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </projectListeners>
+    <applicationListeners>
+        <listener class="net.accelf.intellij.gmusic.listeners.AppListener"
+                  topic="com.intellij.ide.AppLifecycleListener"/>
+    </applicationListeners>
+
+    <actions>
+        <group id="net.accelf.intellij.gmusic.actions.GMusicGroupedActions"
+               text="Google Play Music" popup="true">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+
+            <action id="net.accelf.intellij.gmusic.actions.ConnectAction"
+                    class="net.accelf.intellij.gmusic.actions.ConnectAction"
+                    text="Connect to GPMDP">
+            </action>
+        </group>
+    </actions>
 </idea-plugin>
