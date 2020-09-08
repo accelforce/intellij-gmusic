@@ -6,6 +6,7 @@
 ### Added
 
 ### Changed
+- Updated plugin template to [v0.3.4](https://github.com/JetBrains/intellij-platform-plugin-template/releases/tag/v0.3.4)
 
 ### Deprecated
 
