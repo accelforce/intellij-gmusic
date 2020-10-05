@@ -7,20 +7,23 @@ plugins {
     // Java support
     id("java")
     // Kotlin support
-    id("org.jetbrains.kotlin.jvm") version "1.4.0"
+    id("org.jetbrains.kotlin.jvm") version "1.4.10"
     // gradle-intellij-plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
-    id("org.jetbrains.intellij") version "0.4.22"
+    id("org.jetbrains.intellij") version "0.4.26"
     // gradle-changelog-plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
-    id("org.jetbrains.changelog") version "0.5.0"
-    // detekt linter - read more: https://detekt.github.io/detekt/kotlindsl.html
-    id("io.gitlab.arturbosch.detekt") version "1.12.0"
+    id("org.jetbrains.changelog") version "0.6.0"
+    // detekt linter - read more: https://detekt.github.io/detekt/gradle.html
+    id("io.gitlab.arturbosch.detekt") version "1.14.1"
     // ktlint linter - read more: https://github.com/JLLeitschuh/ktlint-gradle
     id("org.jlleitschuh.gradle.ktlint") version "9.4.0"
 }
 
 // Import variables from gradle.properties file
 val pluginGroup: String by project
-val pluginName: String by project
+// `pluginName_` variable ends with `_` because of the collision with Kotlin magic getter in the `intellij` closure.
+// Read more about the issue: https://github.com/JetBrains/intellij-platform-plugin-template/issues/29
+@Suppress("PropertyName")
+val pluginName_: String by project
 val pluginVersion: String by project
 val pluginSinceBuild: String by project
 val pluginUntilBuild: String by project
@@ -38,7 +41,7 @@ repositories {
     jcenter()
 }
 dependencies {
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.12.0")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.14.1")
 
     implementation("com.squareup.okhttp3:logging-interceptor:4.7.2")
 
@@ -52,7 +55,7 @@ dependencies {
 // Configure gradle-intellij-plugin plugin.
 // Read more: https://github.com/JetBrains/gradle-intellij-plugin
 intellij {
-    pluginName = pluginName
+    pluginName = pluginName_
     version = platformVersion
     type = platformType
     downloadSources = platformDownloadSources.toBoolean()
