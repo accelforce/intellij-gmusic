@@ -30,6 +30,7 @@ internal class AppListener : AppLifecycleListener {
             .subscribe {
                 when (it) {
                     is WebSocket.Event.OnConnectionOpened<*> -> {
+                        appService.connected = true
                         notificationGroup.debug("Connected to GPMDP")
 
                         if (appService.code == null) {
@@ -40,9 +41,11 @@ internal class AppListener : AppLifecycleListener {
                         gpmdp.send(ConnectCommand(appService.code))
                     }
                     is WebSocket.Event.OnConnectionClosed -> {
+                        appService.connected = false
                         notificationGroup.notify("Disconnected from GPMDP", NotificationType.WARNING)
                     }
                     is WebSocket.Event.OnConnectionFailed -> {
+                        appService.connected = false
                         notificationGroup.notify(
                             "Could not connect to GPMDP\n${it.throwable.message}",
                             NotificationType.ERROR

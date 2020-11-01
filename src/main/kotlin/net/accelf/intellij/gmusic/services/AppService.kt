@@ -32,6 +32,8 @@ class AppService {
 
     val gpmdp = scarlet.create<GPMDP>()
 
+    var connected: Boolean = false
+
     val notificationGroup = NotificationGroup("intellij-gmusic", NotificationDisplayType.BALLOON, true)
 
     private val propertiesComponent = PropertiesComponent.getInstance()

@@ -17,16 +17,15 @@ class MusicWidgetPresentation : StatusBarWidget.TextPresentation {
     }
 
     override fun getText(): String {
-        if (appService.code == null) {
-            return "not connected"
-        }
-
-        if (appService.track == null) {
-            return "connected"
-        }
-
-        appService.track!!.apply {
-            return "$title - $artist"
+        return when {
+            !appService.connected -> "not connected"
+            appService.code == null -> "not authorized"
+            appService.track == null -> "connected"
+            else -> {
+                appService.track!!.run {
+                    "$title - $artist"
+                }
+            }
         }
     }
 
