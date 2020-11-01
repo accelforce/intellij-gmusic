@@ -81,6 +81,14 @@ detekt {
     }
 }
 
+ktlint {
+    disabledRules.set(
+        setOf(
+            "no-wildcard-imports"
+        )
+    )
+}
+
 tasks {
     // Set the compatibility versions to 1.8
     withType<JavaCompile> {

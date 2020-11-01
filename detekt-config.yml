@@ -8,6 +8,8 @@ complexity:
 formatting:
   MaximumLineLength:
     active: false
+  NoWildcardImports:
+    active: false
 
 style:
   ReturnCount:
