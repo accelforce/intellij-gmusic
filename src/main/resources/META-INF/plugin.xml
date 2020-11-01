@@ -8,7 +8,12 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable parentId="tools" instance="net.accelf.intellij.gmusic.settings.AppConfigurable"
+                                 id="net.accelf.intellij.gmusic.settings.AppConfigurable"
+                                 displayName="Google Play Music"/>
+
         <applicationService serviceImplementation="net.accelf.intellij.gmusic.services.AppService"/>
+        <applicationService serviceImplementation="net.accelf.intellij.gmusic.services.SettingsState"/>
 
         <statusBarWidgetFactory implementation="net.accelf.intellij.gmusic.statusbar.MusicWidgetFactory"
                                 id="net.accelf.intellij.gmusic.statusbar.MusicWidgetFactory"
