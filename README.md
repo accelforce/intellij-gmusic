@@ -11,6 +11,7 @@ Connects IntelliJ to [Google Play Music Desktop Player](https://googleplaymusicd
 
 ## Features
 * See the title of currently playing song
+* Supports WSL environment
 <!-- Plugin description end -->
 
 ## Installation

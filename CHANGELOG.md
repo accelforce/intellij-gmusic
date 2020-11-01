@@ -4,17 +4,12 @@
 
 ## [Unreleased]
 ### Added
+- Supports manual target address configuration
+- Supports WSL environment
 
 ### Changed
-- Updated plugin template to [v0.3.4](https://github.com/JetBrains/intellij-platform-plugin-template/releases/tag/v0.3.4)
+- Updated plugin template to [v0.6.0](https://github.com/JetBrains/intellij-platform-plugin-template/releases/tag/v0.6.0)
 
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
 ## [0.1.0]
 ### Added
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
