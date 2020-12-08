@@ -4,16 +4,11 @@
 
 ## [Unreleased]
 ### Added
+- Supports IDE version 2020.3
 
 ### Changed
+- Updated plugin template to [v0.7.1](https://github.com/JetBrains/intellij-platform-plugin-template/releases/tag/v0.7.1)
 
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
 ## [0.2.0]
 ### Added
 - Supports manual target address configuration
